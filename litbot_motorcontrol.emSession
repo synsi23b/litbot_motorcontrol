@@ -1,0 +1,59 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="litbot_motorcontrol"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol;src"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol;synhal"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol;sys_cube_usb"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol;sys_SEGGER"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol;sys_SEGGER;Lib"/>
+  <ProjectSessionItem path="litbot_motorcontrol;litbot_motorcontrol;sys_Setup"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="43" useTextEdit="1" path="stmbase/embos/common/SEGGER_RTT_Syscalls_SES.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="994" useTextEdit="1" path="stmbase/synhal32/synhal.h" left="0" top="964" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="34" y="62" useTextEdit="1" path="src/main.cpp" left="0" top="30" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="70" useTextEdit="1" path="src/steppermotor.h" left="0" top="30" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="387" useTextEdit="1" openedFrom="/home/synsi/repos/litbot_motorcontrol/stmbase/synhal32/synhal.h" path="stmbase/embos/stm32f401ccu6/stm32f401xc.h" left="0" top="349" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="19" y="1212" useTextEdit="1" path="stmbase/synhal32/syn_usb.cpp" left="0" top="1186" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="95" useTextEdit="1" openedFrom="/home/synsi/repos/litbot_motorcontrol/stmbase/synhal32/syn_usb.cpp" path="stmbase/cube_usb_cdc/usbd_def.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="45" y="14" useTextEdit="1" path="stmbase/synhal32/syn_timer.cpp" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="stmbase/embos/stm32f401ccu6/RTOSInit_STM32F4xx.c" left="0" top="24" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="stmbase/embos/common/OS_ThreadSafe.c" left="0" top="21" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="stmbase/embos/common/RTOS.h" left="0" selected="1" top="447" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="litbot_motorcontrol" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>

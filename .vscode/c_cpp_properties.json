@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/stmbase/synhal32/**",
+                "${workspaceFolder}/stmbase/embos/common/**",
+                "${workspaceFolder}/stmbase/embos/stm32f401ccu6/**",
+                "C:\\Program Files\\SEGGER\\SEGGER Embedded Studio for ARM 6.32b\\include\\**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "GCC_ARMCM3",
+                "STM32F401xC",
+                "OS_INT_Disable=int",
+                "OS_INT_Enable=int"
+            ],
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="litbot_motorcontrol" target="8" version="2">
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG;OS_LIBMODE_DP"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG;OS_LIBMODE_R"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 3" />
+  <configuration
+    Name="Release Profiling"
+    c_preprocessor_definitions="NDEBUG;OS_LIBMODE_SP"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 3" />
+  <project Name="litbot_motorcontrol">
+    <configuration
+      LIBRARY_IO_TYPE="RTT"
+      Name="Common"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_heap_size="20480"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_linker_variant="SEGGER"
+      arm_simulator_memory_simulation_parameter="RX 08000000,00040000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+      arm_target_device_name="STM32F401CC"
+      arm_target_interface_type="SWD"
+      build_intermediate_directory="$(ProjectDir)/Output/$(Configuration)"
+      build_output_directory="$(ProjectDir)/Output/$(Configuration)"
+      c_additional_options="-Wall;-Wextra;-Wunused-variable;-Wuninitialized;-Wmissing-field-initializers;-Wundef;-ffunction-sections;-fdata-sections"
+      c_only_additional_options=""
+      c_preprocessor_definitions="SYSVIEW_DEVICE_NAME=&quot;STM32F401CC&quot;;SYSVIEW_RAM_BASE=0x20000000;USE_RTT=1;STM32F401xC;__STM32F4xx_FAMILY;__STM32F401_SUBFAMILY;HSE_VALUE=25000000;__VFP_HARD__;USB_OTG_FS=1"
+      c_user_include_directories="$(ProjectDir)/stmbase/embos/common;$(ProjectDir)/stmbase/embos/stm32f401ccu6;$(ProjectDir)/stmbase/synhal32;"
+      debug_register_definition_file="$(ProjectDir)/stmbase/embos/stm32f401ccu6/STM32F401x_Registers.xml"
+      debug_target_connection="J-Link"
+      debug_threads_script="$(ProjectDir)/stmbase/embos/embOSPluginSES.js"
+      gcc_cplusplus_language_standard="gnu++14"
+      gcc_entry_point="Reset_Handler"
+      link_linker_script_file="$(ProjectDir)/stmbase/embos/stm32f401ccu6/STM32F401_Flash.icf"
+      linker_additional_options="--gc-sections"
+      linker_additional_system_libraries=""
+      linker_output_format="hex"
+      linker_section_placements_segments="FLASH1 RX 0x08000000 0x00040000;RAM1 RWX 0x20000000 0x00010000"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_script_file="$(ProjectDir)/stmbase/embos/stm32f401ccu6/STM32F4xx_Target.js" />
+    <folder Name="src">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="src/globals.h" />
+      <file file_name="src/main.cpp" />
+      <file file_name="src/steppermotor.h" />
+      <file file_name="src/synhal_cfg.h" />
+      <file file_name="src/synhal_isr.h" />
+      <file file_name="src/synrpc_handlers.cpp" />
+      <file file_name="src/synrpc_usbcon.cpp" />
+      <file file_name="src/synrpc_usbcon.h" />
+    </folder>
+    <folder Name="synhal">
+      <file file_name="stmbase/synhal32/mtl.h" />
+      <file file_name="stmbase/synhal32/syn_adc.cpp" />
+      <file file_name="stmbase/synhal32/syn_dma.cpp" />
+      <file file_name="stmbase/synhal32/syn_eeprom.cpp" />
+      <file file_name="stmbase/synhal32/syn_exti.cpp" />
+      <file file_name="stmbase/synhal32/syn_i2c.cpp" />
+      <file file_name="stmbase/synhal32/syn_timer.cpp" />
+      <file file_name="stmbase/synhal32/syn_usb.cpp" />
+      <file file_name="stmbase/synhal32/synhal.cpp" />
+      <file file_name="stmbase/synhal32/synhal.h" />
+    </folder>
+    <folder Name="sys_SEGGER">
+      <configuration Name="Debug" gcc_optimization_level="Level 3" />
+      <folder Name="Lib">
+        <file file_name="$(ProjectDir)/stmbase/embos/lib/libos_v7m_t_vfpv4h_le_dp.a">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release Profiling"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/stmbase/embos/lib/libos_v7m_t_vfpv4h_le_r.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration
+            Name="Release Profiling"
+            build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(ProjectDir)/stmbase/embos/lib/libos_v7m_t_vfpv4h_le_sp.a">
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+      <file file_name="$(ProjectDir)/stmbase/embos/common/HardFaultHandler.S" />
+      <file file_name="$(ProjectDir)/stmbase/embos/common/JLINKMEM_Process.c">
+        <configuration Name="Release" build_exclude_from_build="No" />
+      </file>
+      <file file_name="$(ProjectDir)/stmbase/embos/common/OS_Error.c">
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="$(ProjectDir)/stmbase/embos/common/OS_ThreadSafe.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/embos/common/RTOS.h" />
+      <file file_name="$(ProjectDir)/stmbase/embos/common/SEGGER_HardFaultHandler.c" />
+      <file file_name="$(ProjectDir)/stmbase/embos/common/SEGGER_RTT.c" />
+      <file file_name="$(ProjectDir)/stmbase/embos/common/SEGGER_RTT_ASM_ARMv7M.S">
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="$(ProjectDir)/stmbase/embos/common/SEGGER_SYSVIEW.c">
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="$(ProjectDir)/stmbase/embos/common/SEGGER_SYSVIEW_Config_embOS.c">
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="$(ProjectDir)/stmbase/embos/common/SEGGER_SYSVIEW_embOS.c">
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+    <folder Name="sys_Setup">
+      <file file_name="$(ProjectDir)/stmbase/embos/stm32f401ccu6/RTOSInit_STM32F4xx.c" />
+      <file file_name="$(ProjectDir)/stmbase/embos/stm32f401ccu6/SEGGER_THUMB_Startup.s" />
+      <file file_name="$(ProjectDir)/stmbase/embos/stm32f401ccu6/STM32F401_Flash.icf" />
+      <file file_name="$(ProjectDir)/stmbase/embos/stm32f401ccu6/STM32F401x_Vectors.s" />
+      <file file_name="$(ProjectDir)/stmbase/embos/stm32f401ccu6/STM32F4xx_Startup.s" />
+      <file file_name="stmbase/embos/stm32f401ccu6/stm32f401xc.h" />
+      <file file_name="$(ProjectDir)/stmbase/embos/stm32f401ccu6/system_stm32f4xx.c" />
+    </folder>
+    <folder Name="sys_cube_usb">
+      <configuration Name="Debug" build_exclude_from_build="No" />
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal.c" />
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal.h" />
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal_conf.h" />
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal_def.h" />
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal_pcd.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal_pcd.h" />
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_hal_pcd_ex.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_ll_usb.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/stm32f4xx_ll_usb.h" />
+      <file file_name="stmbase/cube_usb_cdc/usb_device.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/usbd_cdc.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/usbd_cdc.h" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_cdc_if.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/usbd_conf.c">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+      </file>
+      <file file_name="stmbase/cube_usb_cdc/usbd_conf.h" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_core.c" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_core.h" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_ctlreq.c" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_ctlreq.h" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_desc.c" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_desc.h" />
+      <file file_name="stmbase/cube_usb_cdc/usbd_ioreq.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+  </project>
+</solution>

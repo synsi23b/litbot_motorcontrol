@@ -1,0 +1,3 @@
+[submodule "stmbase"]
+	path = stmbase
+	url = git@bitbucket.org:synsir/stmbase.git
